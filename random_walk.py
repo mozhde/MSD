@@ -7,8 +7,9 @@ Created on Thu Jun  9 15:11:09 2022
 """
 from random import random
 import matplotlib.pyplot as plt
-from numpy import array
+from numpy import array, savetxt
 from copy import deepcopy
+
 
 def gen_rw(n_walk):
     walk = []
@@ -28,8 +29,7 @@ def gen_rw(n_walk):
     
 
 walks = gen_rw(256)
-print(walks)
-#savetxt('walks', walks)
+savetxt('walk.txt', walks)
 
 plt.plot(walks[:, 0], walks[:, 1], 'p')
 #plt.ylim(-4.05, -3.95)
